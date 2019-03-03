@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Formulario - TAREA T-5</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="comprobarRegistro()">
+    
+    <div id="bienvenida">
+    <h2>Bienvenido</h2><h2 id="desconocido">, ¡no te conocemos todavía!</h2>  <button id="btn-registro" type="button" style="visibility: visible" onclick="cambio()">REGISTRO</button>
+    </div>
+    <div>
+    <button id="btn-borrarCookies" type="button" style="visibility: hidden" onclick="borrarCookies()">Salir</button>
+    </div>
+    
+    <div class="contenedor-formulario" id="contenedorFormulario" style="visibility: hidden">
+        <div class="wrap">
+            <form class="formulario" name="formulario_registro" action="" method="post" onsubmit="return validar()">
+            <div>
+                <div class="input-group">                   
+                   Nombre: <input type="text" id="nombre" class="input" name="nombre" required>
+                   <label for="nombre"></label><div id="nombreError" style="visibility:hidden; color:red;">Nombre no válido</div>
+                </div>
+                <div class="input-group">                   
+                   <input type="text" id="email" class="input" name="email" required>
+                   <label for="email">Correo electrónico:</label><div id="emailError" style="visibility:hidden; color:red;">Email no válido</div>
+                </div>
+                <div class="input-group">                   
+                   <input type="password" id="pass" class="input" name="pass" required>
+                   <label for="pass">Contraseña:</label>
+                   <div id="passError" style="visibility: hidden; color:red;">al menos 1 mayúscula,1 minúscula,1 número y 1 símbolo</div>
+                </div>
+                <div class="input-group">                   
+                   <input type="password" id="pass-2" class="input" name="pass-2" required>
+                   <label for="pass-2">Confirmación de contraseña:</label><div id="pass2error" style="visibility: hidden; color:red;">La contraseña no coincide</div>
+                </div>
+                <div class="input-group radio">         
+                   <input type="radio" id="hombre" name="sexo" value="1">
+                   <label for="hombre">Hombre</label>
+                   
+                   <input type="radio" id="mujer" name="sexo" value="2">
+                   <label for="mujer">Mujer</label>
+                </div><div id="sexoError" style="visibility: hidden; color:red;">Debes elegir al menos una opción</div>
+                <div class="input-group">
+                    <input type="text" id="direccion" class="input" name="direccion">
+                    <label for="direccion">Dirección:</label>
+                </div>
+                <div class="input-group">                   
+                   <input type="date" id="fecha" class="input" name="fecha">
+                   <label for="fecha">Fecha de nacimiento:</label>
+                </div>
+                <div class="input-group select">
+                    <select name="pais" class="">
+                        <option value="0">País de nacimiento:</option>
+                        <option value="1">Andorra</option><option value="2">Austria</option><option value="3">Bélgica</option><option value="4">Bulgaria</option><option value="5">Chipre</option><option value="6">Croacia</option><option value="7">Dinamarca</option><option value="8">Eslovaquia</option><option value="9">Eslovenia</option><option value="10">España</option><option value="11">Estonia</option><option value="12">Finlandia</option><option value="13">Francia</option><option value="14">Grecia</option><option value="15">Hungría</option><option value="16">Irlanda</option><option value="17">Italia</option><option value="18">Letonia</option><option value="19">Lituania</option><option value="20">Luxemburgo</option><option value="21">Malta</option><option value="22">Países Bajos</option><option value="23">Polonia</option><option value="24">Portugal</option><option value="25">Reino Unido</option><option value="26">República Checa</option><option value="27">Rumanía</option><option value="28">Suecia</option>                        
+                    </select>
+                </div>
+                <div class="input-group checkbox">
+                   <input type="checkbox" id="revista" name="revista" value="true">
+                   <label for="revista" class="label">¿Quieres suscribirte a nuestra revista?</label>                    
+                </div>
+                <div class="input-group checkbox">
+                   <input type="checkbox" id="terminos" name="terminos" value="true">
+                   <label for="terminos" class="label">Acepto los términos y condiciones</label>                    
+                </div><div id="terminosError" style="visibility: hidden; color:red;">Debes aceptar los términos para registrarte</div>
+                <input type="submit" id="btn-submit" value="Enviar">
+            </div>
+        </form>
+        </div>
+    </div> 
+   
+    <script src="validator.js"></script>
+   
+</body>
+
+</html>
